@@ -22,7 +22,10 @@ get_header();
 
                         <img class="sggRoundImage" src="<?php echo get_the_post_thumbnail_url() ?>"/>
 	                    <br><br>
-	                    <a href="#" target="_blank" class="demoLink">Preview</a>
+                        <?php
+                            $preview_url = get_post_meta(get_the_ID(),'preview_url',true) ? get_post_meta(get_the_ID(),'preview_url',true) : '#'
+                        ?>
+	                    <a href="<?php echo $preview_url ?>" target="_blank" class="demoLink">Preview</a>
                     </div>
 
                     <div class="psg_content">
